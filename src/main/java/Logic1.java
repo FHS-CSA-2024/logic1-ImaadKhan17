@@ -84,7 +84,16 @@ public class Logic1
 	old35(10) --> true
 	old35(15) --> false */
 	public boolean old35(int n) {
-	
+		if (n%3 == 0){
+			if (n%5 == 0){
+				return false;
+			}
+			return true;
+		}else if (n%5 == 0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 
@@ -96,7 +105,13 @@ public class Logic1
 	specialEleven(23) --> true
 	specialEleven(24) --> false */
 	public boolean specialEleven(int n) {
-	  
+	  if (n%11 == 0 ){
+		  return true;
+	  }else if((n-1) % 11 == 0 ){
+		  return true;
+	  }else{
+		  return false;
+	  }
 	}
 
 
@@ -106,7 +121,10 @@ public class Logic1
 	more20(21) --> true
 	more20(42) --> true */
 	public boolean more20(int n) {
-	  
+	  if ((n + 1)%20 == 0 || (n+2)%20 ==0){
+		  return true;
+	  }
+	  return false;
 	}
 
 
@@ -118,7 +136,10 @@ public class Logic1
 	less20(59) --> true
 	less20(20) --> false */
 	public boolean less20(int n) {
-	  
+		if ((n - 1)%20 == 0 || (n-2)%20 ==0){
+			return true;
+		}
+		return false;
 	}
 
 	/*Given a non-negative number "num", return true if num is within 2 of a multiple of 10. 
@@ -129,7 +150,10 @@ public class Logic1
 	nearTen(17) --> false
 	nearTen(19) --> true */
 	public boolean nearTen(int num) {
-	  
+	  if((num+1)%10 == 0 || (num-1)%10 == 0){
+		  return true;
+	  }
+	  return false;
 	}
 
 
@@ -142,7 +166,11 @@ public class Logic1
 	sortaSum(9, 4) --> 20
 	sortaSum(10, 11) --> 21*/
 	public int sortaSum(int a, int b) {
-	  
+		int sum = a+b;
+	  if (sum>=10 && sum<=19){
+		  return 20;
+	  }
+	  return sum;
 	}
 
 
@@ -155,7 +183,18 @@ public class Logic1
 	in1To10(11, false) --> false
 	in1To10(11, true) --> true */
 	public boolean in1To10(int n, boolean outsideMode) {
-	  
+	  if (outsideMode){
+		  if (n<=1 || n>=10){
+			  return true;
+		  }
+		  return false;
+	  }else{
+		  if (n>=1 && n<=10){
+			  return true;
+		  }
+		  return false;
+
+	  }
 	}
 
 
